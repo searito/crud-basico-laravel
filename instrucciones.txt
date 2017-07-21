@@ -1,0 +1,27 @@
+01. php artisan make:model -mc 		 ......................................... Crea el modelo, la migración y el controlador
+02. php artisan make:seeder ProductsTableSeeder		.......................... Crea el seeder (datos semilla) en este caso se llama ProductsTableSeeder
+03. Crear los campos para la tabla products  (.../database/migrations/....)
+
+04. Configurar el archivo seeder (.../database/seeds/ProductsTableSeeder)  [ver como configurar los seeder y factories en documentacion]
+05. Configurar el archivo factories (.../database/factories/xxxxx.php)     [ver en documentación como usar los factories]
+06. Configurar el/los modelos necesarios
+
+07. Modificar el archivo app/providers/AppServiceProvider	.................. Introducir
+	
+		use Illuminate\Support\Facades\Schema;
+
+	dentro de función boot escribir
+
+		Schema::defaultStringLength(191);
+
+08. Configurar el archivo .env
+
+09. php artisan migrate:refresh --seed 	...................................... Crea las tablas en la bd y rellena la tabla que contenga los seeds
+10. php artisan db:seed --class=NombreDelSeed 	.............................. Rellena los campos de la tabla que contenga los seeds
+
+11. Configurar el archivo .../routes/web.php  para las rutas.
+12. Ir al controlador y crear las funciones necesarias
+13. Crear Vistas
+
+14. Cambiar las variables de idioma de validacion en archivo app, de 'en' a 'es', y copiar la carpeta 'es' de cualquier repositorio a ../resources/lang/
+	o bajar el archivo laravel-lang de git
